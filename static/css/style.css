@@ -721,7 +721,8 @@ Responsive media queries
     margin-top: 0px;
 }
 .banner-info {
-    padding-top: 40px;
+    padding-top: 90px;
+    padding-bottom: 30px;
 }
 h1.bnr-title {
     font-size: 16px;
