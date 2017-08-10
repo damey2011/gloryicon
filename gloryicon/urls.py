@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^blogs/', include('blog.urls')),
     url(r'^upload/', views.upload, name="upload"),
     url(r'^contact/', Contact.as_view(), name="contact"),
+    url(r'^RCFSFA/', include('RCFSFA.urls'), name="rcfsfa"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
