@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ post.title }}</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ post.seo_desc }}">
+    <meta name="keywords" content="{{ post.seo_keywords }}">
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:site_name" content="gloryicon.com">
+    <meta property="og:description" content="{{ post.seo_desc }}">
+    <meta property="og:image" content="{{ post.post_image.url }}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri| slice:":-1" }}" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <link rel="icon" href="{% static 'img/gi.ico' %}">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<header id="">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header" style="position: relative;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="border-color: transparent;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <img src="{% static 'img/logo_icon.png' %}" alt="Glory Icon" width="40px;" height="40px;">
+                <a class="navbar-brand" href="#" style="margin-left: 55px;">Glory<span class="logo-dec">Icon</span></a>
+
+            </div>
+            <div class="icon">
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="grace">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class=""><a href="#main-header">Home</a></li>
+                            <li class=""><a href="#feature">About</a></li>
+                            <li class=""><a href="#service">Services</a></li>
+                            <li class=""><a href="#portfolio">Portfolio</a></li>
+                            <li class=""><a href="#testimonial">Testimonial</a></li>
+                            <li class="active"><a href="/blogs">Blog</a></li>
+                            <li class=""><a href="#contact">Contact Us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row body-content">
+        <div class="col-lg-8 col-lg-offset-2">
+            <br>
+            <br>
+
+            {% if comment_added %}
+                <div class="alert alert-success">
+                    Yaay!! Your Comment was added
+                </div>
+            {% endif %}
+
+            <div class="blog-post">
+                <div class="img-container">
+                    {% if post.post_image %}
+                        <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img-responsive">
+                    {% else %}
+                        <img src="/static/img/port04.jpg" class="img-responsive" alt="{{ post.title }}">
+                    {% endif %}
+                </div>
+
+                <div class="blog-body">
+                    <h3>{{ post.title }}</h3>
+                    <div class="post-details-bar">
+                        <div class="post-detail">
+                            <span class="fa fa-calendar"></span>
+                            {{ post.timestamp.date }}
+                        </div>
+                        <div class="post-detail">
+                            {{ post.get_no_comments }}
+                            <span class="fa fa-comments"></span>
+                        </div>
+                    </div>
+                    <div class="divider">
+
+                    </div>
+                    <div class="content">
+                        {{ post.content | safe }}
+                    </div>
+
+                    <ul class="social-links circle animated-effect-1">
+                        <li class="facebook"><a target="_blank" href="http://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="twitter"><a target="_blank" href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                        <li class="googleplus"><a target="_blank" href="http://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                    <!--  <div class="social-bar">
+                         <div class="social-item">
+                             <a href="#"><span class="fa fa-facebook"></span></a>
+                         </div>
+                         <div class="social-item">
+                             <a href="#"><span class="fa fa-twitter"></span></a>
+                         </div> -->
+                </div>
+            </div>
+
+            <br>
+            <h3>Comments</h3>
+            <div class="divider comment-underline"></div>
+            <br>
+            <div class="comments">
+                {% if not comments %}
+                    <h5>No Comments Written Yet</h5>
+                {% endif %}
+
+                {% for c in comments %}
+                    <div class="comment-item">
+                        <header>
+                            <img src="/static/img/avatar.jpg" class="img-responsive img-circle">
+                            <div class="commenter">
+                                <h4>{{ c.name }}</h4> |
+                                <span class="fa fa-calendar">{{ c.timestamp.date }}</span>
+                            </div>
+                        </header>
+                        <div class="comment-body">
+                            {{ c.message }}
+                        </div>
+                        <br>
+                        {#                        <footer class="comment-footer">#}
+                        {#                            <a href="#"><span class="fa fa-reply"> reply</span></a>#}
+                        {#                        </footer>#}
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <hr>
+            <div class="comment-form">
+                <form class="form-group" method="post" action="/blogs/save-comment/">
+                    {% csrf_token %}
+                    <h3>Post a comment</h3>
+                    <br>
+                    <label for="name">Name:</label><br>
+                    <input type="text" name="name" id="name" class="form-control">
+                    <br>
+                    <label for="email">Email:</label><br>
+                    <input type="text" name="email" id="email" class="form-control">
+                    <br>
+                    <label for="message">Comment:</label><br>
+                    <textarea rows="5" class="form-control" name="message" id="message"></textarea>
+                    <input type="hidden" value="{{ post.slug }}" name="slug">
+                    <input type="hidden" value="{{ post.id }}" name="parent">
+                    <br>
+                    <input type="submit" value="Comment" class="btn btn-primary">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="/static/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

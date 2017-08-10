@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        {% if post.post_image %}
+            <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img-responsive">
+        {% else %}
+            <img src="/static/img/blog01.jpg" alt="{{ post.title }}" class="img-responsive">
+        {% endif %}
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="blog-content">
+            <a href="/blogs/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
+
+            <div class="post-details-bar">
+                <div class="post-detail">
+                    <span class="fa fa-calendar"></span>
+                    {{ post.timestamp.date }}
+                </div>
+                <div class="post-detail">
+                    {{ post.get_no_comments }}
+                    <span class="fa fa-comments"></span>
+                </div>
+            </div>
+            <hr>
+            <div class="content" style="font-size: 13px; line-height: 1.9; max-height: 100px; overflow: hidden;">
+                {{ post.content | safe | truncatewords:30 }}
+                <a href="/blogs/{{ post.slug }}">read more</a>
+            </div>
+        </div>
+    </div>
+</div>

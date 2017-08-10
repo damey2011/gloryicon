@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Create a Blog Post</title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <link rel="icon" href="{% static 'img/gi.ico' %}">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<header id="">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header" style="position: relative;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="border-color: transparent;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <img src="{% static 'img/logo_icon.png' %}" alt="Glory Icon" width="40px;" height="40px;">
+                <a class="navbar-brand" href="#" style="margin-left: 55px;">Glory<span class="logo-dec">Icon</span></a>
+
+            </div>
+            <div class="icon">
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="grace">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class=""><a href="#main-header">Home</a></li>
+                            <li class=""><a href="#feature">About</a></li>
+                            <li class=""><a href="#service">Services</a></li>
+                            <li class=""><a href="#portfolio">Portfolio</a></li>
+                            <li class=""><a href="#testimonial">Testimonial</a></li>
+                            <li class="active"><a href="/blogs">Blog</a></li>
+                            <li class=""><a href="#contact">Contact Us</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row body-content">
+
+        <div class="container">
+            {% if success_alert %}
+                <div class="alert alert-success">Weldone bros, post was successfully submitted! </div>
+            {% endif %}
+
+            <form method="post" action="/blogs/compose/" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="post-title">Post Title: </label>
+                <input type="text" id="post-title" placeholder="Blog title" class="form-control" name="post-title">
+
+                <label for="post-cat">Category: </label>
+                <select name="post-cat" id="post-cat" class="form-control">
+                    {% for cat in cats %}
+                        <option value="{{ cat.id }}">{{ cat.category }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="thumbnail">Header Photo: </label>
+                <input type="file" id="thumbnail" name="thumbnail" class="form-control">
+
+                <p>
+                    <label for="editor1">Post Content: </label><br />
+                    <textarea id="editor1" name="editor1"></textarea>
+                </p>
+
+                <p>
+                    <label for="tags">SEO Tags (seperate with commas ","): </label><br />
+                    <input type="text" id="tags" name="tags" class="form-control" maxlength="100">
+                </p>
+
+                <p>
+                    <label for="desc">SEO Desc: </label><br />
+                    <input type="text" id="desc" name="desc" class="form-control" maxlength="70">
+                </p>
+
+                <p>
+                    <input type="submit" value="Post"/>
+                </p>
+            </form>
+        </div>
+
+        <script src="/static/js/ckeditor.js"></script>
+        <script type="text/javascript">
+            CKEDITOR.replace( 'editor1' );
+            CKEDITOR.config.extraPlugins = 'uploadimage';
+            CKEDITOR.config.uploadUrl = '/upload/';
+        </script>
+
+    </div>
+
+</div>
+
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="/static/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glory Icon Nigeria Limited</title>
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A COMPANY IN THE VANGUARD OF TECHNOLOGICAL INNOVATIONS">
+    <meta name="keywords" content="gloryicon blogs, glory icon, gloryicon, tech ilorin, tech company ilorin,
+        tech company kwara, IT, IT company ilorin">
+    <meta property="og:title" content="Glory Icon Nigeria Limited">
+    <meta property="og:site_name" content="gloryicon.com">
+    <meta property="og:description" content="A COMPANY IN THE VANGUARD OF TECHNOLOGICAL INNOVATIONS">
+    <meta property="og:image" content="{{ request.path }}/static/img/blog01.jpg" />
+    <meta property="og:url" content="{{ request.build_absolute_uri| slice:":-1" }}" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="icon" href="{% static 'img/gi.ico' %}">
+
+</head>
+<body>
+
+<div class="loader"></div>
+<div id="myDiv">
+    <!--HEADER-->
+    <div class="header">
+        <div class="bg-color">
+            <header id="main-header">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header" style="position: relative;">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="border-color: transparent;">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <img src="{% static 'img/logo_icon.png' %}" alt="Glory Icon" width="40px;" height="40px;">
+                            <a class="navbar-brand" href="#" style="margin-left: 55px;">Glory<span class="logo-dec">Icon</span></a>
+
+                        </div>
+                        <div class="icon">
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <div class="grace">
+                                    <ul class="nav navbar-nav navbar-right">
+
+                                        <li class="active"><a href="#main-header">Home</a></li>
+                                        <li class=""><a href="#feature">About</a></li>
+                                        <li class=""><a href="#service">Services</a></li>
+                                        <li class=""><a href="#portfolio">Portfolio</a></li>
+                                        <li class=""><a href="#testimonial">Testimonial</a></li>
+                                        <li class=""><a href="/blogs">Blog</a></li>
+                                        <li class=""><a href="#contact">Contact Us</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="banner-info text-center wow fadeIn delay-05s">
+                            <div class= "see">
+                                <h2 class="bnr-sub-title">Glory Icon Nigeria Limited</h2>
+                                <h1 class="bnr-title">A Company in the Vanguard of<span> Technological Innovations </span></h1>
+                                <p class="bnr-para">Glory icon is a reputable company with impeccable and outstanding innovations in the world of information technology and software products.<br>We are highly skilled in management through the use of computerized maintenance Management system, Data Documentation/Management and Advanced Tracking Solutions .<br>We are committed to serve you with utmost Sincerity, Simplicity and professionalism</p>
+                            </div>
+                            <div class="brn-btn">
+                                <a href="#service" class="btn btn-download">Learn More</a>
+                                <a href="#contact" class="btn btn-more">Contact Us</a>
+                            </div>
+                            <div class="overlay-detail">
+                                <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ HEADER-->
+    <!---->
+    <section id="feature" class="section-padding wow fadeIn delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img src="/static/img/ser01.png">
+                        </div>
+                        <h3 class="pad-bt15">CMMS</h3>
+                        <p>A CMMS(Computerized Maintenance Management Systems) Software Package maintains a computer database of information about an organization's maintenance operations. </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img src="/static/img/ser02.png">
+                        </div>
+                        <h3 class="pad-bt15">Educational Packages</h3>
+                        <p>Some educational software is designed for use in school classrooms.This type of software is often called classroom management software.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img src="/static/img/ser03.png">
+                        </div>
+                        <h3 class="pad-bt15">CCTV Surveillance</h3>
+                        <p>CCTV (closed-circuit television) is a TV system in which signals are not publicly distributed but are monitored, primarily for surveillance and security purposes.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img src="/static/img/ser04.png">
+                        </div>
+                        <h3 class="pad-bt15">Tracker</h3>
+                        <p> A real-time car tracking device gives you up-to-the-minute speed and location updates, including text or email alerts based on parameters you set in advance.<p/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <section id="service" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="service-title pad-bt15">What We Do?</h2>
+                    <p class="sub-title pad-bt15">Our vast insight and experience in information Technology discoveries and management is highly worth of reckon. <br>We dare to secure Africa through innovative and sustainable management programs.</p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>S</span>oftware Development</h3>
+                        <p>Software development is the process of computer programming, documenting, testing, and bug fixing involved in creating and maintaining applications and frameworks resulting in a software product.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>W</span>ebsite Development</h3>
+                        <p>Web development is a broad term for the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network).</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>I</span>CT Consulting and Training</h3>
+                        <p>We recognise that learning is not just attending training courses but is critical to an organisations success. Today business is fast moving, competitive.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <h3><span>D</span>ata Base Management</h3>
+                        <p>
+                            A database management system (DBMS) is system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="service-title pad-bt15">Our Recent Works</h2>
+                    <p class="sub-title pad-bt15"> Our Icons and packages (Software, Gadgets and Devices) are<br>Durable, Affordable and Easy to use.</p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="/static/img/port01.jpg" class="img-responsive">
+                        <figcaption>
+                            <h2>CCTV</h2>
+                            <p>ABSOLUTE MONITORING AND SAFETY OF PROPERTIES/SITES
+                                (PIPELINES,HOTELS, BORDERS ETC.) THROUGH OUR
+                                TRUSTED SURVEILLANCE PROGRAMS
+                                .</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="/static/img/port02.jpg" class="img-responsive">
+                        <figcaption>
+                            <h2>Alarm Systems
+                            </h2>
+                            <p>Our products and services are easy to access through; Direct Delivery of Software, Installation and Good Maintenance Schedules.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="/static/img/port03.jpg" class="img-responsive">
+                        <figcaption>
+                            <h2>
+                                Professional GPS, Barcode and RFID Tracking
+                            </h2>
+                            <p>How do mobile asset tracking technologies (barcodes, QR codes, NFC, RFID, GPS) work and which one to use for your business. ... There are various asset tracking technologies that help businesses streamline asset tracking and management.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="/static/img/port04.jpg" class="img-responsive">
+                        <figcaption>
+                            <h2>DBMS</h2>
+                            <p>SPARE PARTS AND DATA COLLATION FOR STORAGE, ORGANIZATION  AND PREVENTIVE MAINTENANCE MANAGEMENT PROGRAMS
+                                .</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="/static/img/port05.jpg" class="img-responsive">
+                        <figcaption>
+                            <h2>GPS Personal Tracker/Mini Tracker/Watch Tracker</h2>
+                            <p>Tracking via SMS or GPRS (TCP/UDP), Living location report  , Tracking by time interval, Geo-fencing control and alarm
+                                ,Speeding alert, Get detail address via SMS directly, Google map link for location via SMS, SOS panic button, emergency alarm, Low battery alert
+                                ,Two ways communication,Three buttons for calls or sending message
+                                .</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="/static/img/port01.jpg" class="img-responsive">
+                        <figcaption>
+                            <h2>GPS Vehicle Tracker</h2>
+                            <p>Tracking via SMS or GPRS (TCP/UDP),Living location report,Tracking by time interval / distance / car moving veer
+                                ,Geo-fencing control and alarm,Speeding alert,Get detail address via SMS directly,External power cut alert,GOOGLE MAP link for location via SMS
+                                ,Remote engine / fuel cut,ACC detection,SOS panic button, emergency alarm, Low battery alarm, Mileage calculation report
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <section id="testimonial" class="wow fadeInUp delay-05s">
+        <div class="bg-testicolor">
+            <div class="container section-padding">
+                <div class="row">
+                    <div class="testimonial-item">
+                        <ul class="bxslider" style="left: -35px;">
+                            <li>
+                                <blockquote>
+                                    <img src="/static/img/thumb.png" class="img-responsive">
+                                    <p>Picking the right choice to Web development is an important success factor that can boost your project.Take a glance on at Glory Icon.</p>
+                                </blockquote>
+                                <small>Ayodeji, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="/static/img/thumb.png" class="img-responsive">
+                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
+                                </blockquote>
+                                <small>Marry Smith, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="/static/img/thumb.png" class="img-responsive">
+                                    <p>Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may not be another.</p>
+                                </blockquote>
+                                <small>Vivek Singh, Client</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <img src="/static/img/thumb.png" class="img-responsive">
+                                    <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
+                                </blockquote>
+                                <small>John Doe, Client</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---->
+    <section id="blog" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="service-title pad-bt15">Latest from our blog</h2>
+                    <p class="sub-title pad-bt15">Emphasizing the invaluable and Obligatory role of information Technology<br>in this dispensation and the ones to come.</p>
+                    <hr class="bottom-line">
+                </div>
+            </div>
+            <div class="blog-post-list row">
+                {#                <div class="">#}
+                {% for post in posts %}
+                    {#                {% if forloop.first %}#}
+                    {#                    <div class="row">#}
+                    {#                {% endif %}#}
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        {% if post.post_image %}
+                            <img src="{{ post.post_image.url }}" alt="{{ post.title }}" class="img-responsive">
+                        {% else %}
+                            <img src="/static/img/blog01.jpg" alt="{{ post.title }}" class="img-responsive">
+                        {% endif %}
+
+                        <div class="blog-content">
+                            <a href="/blogs/{{ post.slug }}"><h4>{{ post.title }}</h4></a>
+
+                            <div class="post-details-bar">
+                                <div class="post-detail">
+                                    <span class="fa fa-calendar"></span>
+                                    {{ post.timestamp.date }}
+                                </div>
+                                <div class="post-detail">
+                                    {{ post.get_no_comments }}
+                                    <span class="fa fa-comments"></span>
+                                </div>
+                            </div>
+                            <hr>
+
+                            {#                            <div class="content" style="font-size: 13px; line-height: 1.9; max-height: 100px; overflow: hidden;">#}
+                            {#                                {{ post.content | safe | truncatewords:30 }}#}
+                            {#                                <a href="/blogs/{{ post.slug }}">read more</a>#}
+                            {#                            </div>#}
+                        </div>
+
+                    </div>
+                    {#            {% if forloop.counter|divisibleby:3 %}#}
+                    {#                </div><div class="row">#}
+                    {#            {% endif %}#}
+                    {##}
+                    {#            {% if forloop.last %}#}
+                    {#                </div>#}
+                    {#            {% endif %}#}
+
+
+                {% endfor %}
+
+
+                {#                </div>#}
+            </div>
+        </div>
+    </section>
+    <!---->
+    <section id="contact" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center white">
+                    <h2 class="service-title pad-bt15">Keep in touch with us</h2>
+                    <p class="sub-title pad-bt15">Glory Icon is the future of Information Technology. We have the Information. We have the Skills.<br> We are the future you can't ignore...</p>
+                    <hr class="bottom-line white-bg">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="loction-info white">
+                        <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>No1, Police Road, Off Ilofa Road<br>GRA,Ilorin, Opposite Radio Kwara</p>
+                        <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>lerebamidele@gloryiconlimited.com, lerebamidele@yahoo.com</p>
+                        <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+234803894363,+2348095894363</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="contact-form">
+
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <form action="/contact/" method="post" role="form" class="contactForm">
+                            {% csrf_token %}
+                            <div class="col-md-6 padding-right-zero">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" maxlength="50" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                    <div class="validation"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-submit">SEND NOW</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+
+                <a href="#" class="btn-group google-plus">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a href="#" class="btn-group linkedin">
+                    <i class="fa fa-linkedin-square"></i>
+                </a>
+                <a href="#" class="btn-group twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="#" class="btn-group facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <p>&copy; Glory Icon. All Rights Reserved.</p>
+                    <div class="credits">
+                        <!--
+
+                        -->
+                        Designed  by <a href="#">Glory Icon Nigeria Limited</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---->
+</div>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.easing.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/wow.js"></script>
+<script src="/static/js/jquery.bxslider.min.js"></script>
+<script src="/static/js/custom.js"></script>
+<script src="contactform/contactform.js"></script>
+
+<script>
+
+</script>
+
+</body>
+</html>
