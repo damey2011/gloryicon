@@ -2,11 +2,17 @@
 <html lang="en">
 
 <head>
-    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
-    <title>Update Post</title>
+    <title>Error 404</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ post.seo_desc }}">
+    <meta name="keywords" content="{{ post.seo_keywords }}">
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:site_name" content="gloryicon.com">
+    <meta property="og:description" content="{{ post.seo_desc }}">
+    <meta property="og:image" content="{{ post.post_image.url }}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri| slice:":-1" }}" />
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
     <link rel="stylesheet" type="text/css" href="/static/css/jquery.bxslider.css">
@@ -15,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/animate.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <link rel="icon" href="/static/img/gi.ico">
 
 </head>
 <body>
@@ -30,7 +38,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <img src="{% static 'img/logo_icon.png' %}" alt="Glory Icon" width="40px;" height="40px;">
+                <img src="/static/img/logo_icon.png" alt="Glory Icon" width="40px;" height="40px;">
                 <a class="navbar-brand" href="#" style="margin-left: 55px;">Glory<span class="logo-dec">Icon</span></a>
 
             </div>
@@ -55,38 +63,15 @@
     </nav>
 </header>
 
+
 <!-- Page Content -->
 <div class="container">
 
     <div class="row body-content">
-
-        <div class="container">
-            {% if success_alert %}
-                <div class="alert alert-success">Weldone bros, post was successfully submitted! </div>
-            {% endif %}
-
-            <form method="post" action="/blogs/update/{{ post.id }}/">
-                {% csrf_token %}
-                <label for="post-title">Post Title: </label>
-                <input type="text" id="post-title" placeholder="Blog title" class="form-control" name="post-title" value="{{ post.title }}">
-
-                <p>
-                    <label for="editor1">Post Content: </label><br />
-                    <textarea id="editor1" name="editor1" >{{ post.content }}</textarea>
-                </p>
-                <p>
-                    <input type="submit" value="Update"/>
-                </p>
-            </form>
-        </div>
-
-        <script src="/static/js/ckeditor.js"></script>
-        <script type="text/javascript">
-            CKEDITOR.replace( 'editor1' );
-            CKEDITOR.config.extraPlugins = 'uploadimage';
-            CKEDITOR.config.uploadUrl = '/upload/';
-        </script>
-
+       <div class="well">
+           <h1><span class="text-danger">Error 404:</span> Page not found</h1>
+           <p>Go back to <a href="/">home</a></p>
+       </div>
     </div>
 
 </div>
@@ -94,7 +79,7 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/static/js/bootstrap.min.js"></script>
