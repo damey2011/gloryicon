@@ -76,7 +76,8 @@ class StaticPostsSitemap(Sitemap):
 
     def items(self):
         return [
-            'blogs'
+            'home',
+            'all_posts'
         ]
 
     def location(self, item):

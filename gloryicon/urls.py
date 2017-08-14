@@ -17,15 +17,21 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
-from blog.models import ContactFormModel
+from django.contrib.sitemaps.views import sitemap
+from blog.models import ContactFormModel, BlogSitemap
 from blog.views import Contact
 from gloryicon import views
+
+sitemaps = {
+    'blogs': BlogSitemap
+}
 
 urlpatterns = [
     url(r'^$', views.Home.as_view(), name='home'),
     url(r'^admin/', admin.site.urls),
-    url(r'^blogs/', include('blog.urls')),
+    url(r'^blogs/', include('blog.urls'), name="blogs"),
     url(r'^upload/', views.upload, name="upload"),
     url(r'^contact/', Contact.as_view(), name="contact"),
     url(r'^RCFSFA/', include('RCFSFA.urls'), name="rcfsfa"),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
