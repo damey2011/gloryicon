@@ -70,7 +70,7 @@ class BlogSitemap(Sitemap):
         return obj.timestamp
 
 
-class StaticPostsSitemap(Sitemap):
+class StaticPagesSitemap(Sitemap):
     priority = 0.5
     changefreq = 'daily'
 
